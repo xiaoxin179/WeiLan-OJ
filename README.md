@@ -8,7 +8,7 @@
 
 **前端：**
 
-vue3+TypeScript+Arco-design
+vue3+TypeScript+Arco-design+vuex
 
 **后端：**
 
