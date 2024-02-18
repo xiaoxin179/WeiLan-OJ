@@ -4,7 +4,7 @@
 
 <template>
 <div id="personView">
-  <h1>个人中兴</h1>
+  个人中心
 </div>
 </template>
 

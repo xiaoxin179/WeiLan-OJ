@@ -1,16 +1,10 @@
 import { createStore } from 'vuex'
+import user from '@/store/user'
 
-const store = createStore({
-  state() {
-    return {
-      count: 0
-    }
-  },
-  mutations: {
-    increment(state) {
-      state.count++
-    }
+export default createStore({
+  mutations:{},
+  actions:{},
+  modules: {
+    user
   }
 })
-
-export default store
