@@ -7,6 +7,7 @@ import router from './router'
 import ArcoVue from '@arco-design/web-vue'
 import '@arco-design/web-vue/dist/arco.css'
 import store from "./store";
+import "@/access";
 const app = createApp(App)
 
 app.use(router)

@@ -2,21 +2,38 @@
 import BasicLayout from '@/layouts/BasicLayout.vue'
 import { useRouter } from 'vue-router'
 import { useStore } from 'vuex'
-
-const router = useRouter();
-// 从store中获取用户权限
-const store = useStore();
-router.beforeEach((to, from, next) => {
-  // 仅管理员可见，判断当前用户是否有权限
-  if (to.meta?.access === "canAdmin") {
-    if (store.state.user.loginUser?.role !== "admin") {
-      next("/noAuth");
-      return;
-    }
-  }
-  // 有权限则跳转
-  next();
+import { onMounted } from 'vue'
+/**
+ * 全局初始化函数，有全局单次调用的代码，都可以写到这里
+ */
+const doInit = () => {
+  console.log(
+    '                   _oo0oo_                     \n' +
+    '                  o8888888o										\n' +
+    '                  88" . "88										\n' +
+    '                  (| -_- |)										\n' +
+    '                   O\\ = /O										\n' +
+    "               ____/`---'\\____									\n" +
+    "             .   ' \\\\| |// `.									\n" +
+    '              / \\\\||| : |||// \\								\n' +
+    '           / _||||| -卍- |||||- \\								\n' +
+    '              | | \\\\\\ - /// | |								\n' +
+    "            | \\_| ''\\---/'' | |								\n" +
+    '             \\ .-\\__ `-` ___/-. /							\n' +
+    "          ___`. .' /--.--\\ `. . __							\n" +
+    '       ."" "< `.___\\_<|>_/___. ` >" "".        \n' +
+    '      | | : `- \\`.;`\\ _ /`;.`/ - ` : | |       \n' +
+    '        \\ \\ `-. \\_ __\\ /__ _/ .-` / /          \n' +
+    "======`-.____`-.___\\_____/___.-`____.-'======  \n" +
+    "                   `=---='                     \n" +
+    '.............................................  \n\t\t' +
+    '佛祖镇楼                  BUG走开                          \n\t'
+  )
+};
+onMounted(() => {
+  doInit();
 });
+
 
 </script>
 
