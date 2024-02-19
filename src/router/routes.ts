@@ -4,34 +4,57 @@ import PersionView from '@/views/PersionView.vue'
 import AdminView from '@/views/AdminView.vue'
 import noAuth from '@/views/noAuth.vue'
 import accessEnum from '@/access/accessEnum'
-export const routes:Array<RouteRecordRaw>= [
+import UserLayout from '@/layouts/UserLayout.vue'
+import UserLoginView from '@/views/user/UserLoginView.vue'
+import UserRegisterView from '@/views/user/UserRegisterView.vue'
+
+export const routes: Array<RouteRecordRaw> = [
+  {
+    path: '/user',
+    name: '用户',
+    component: UserLayout,
+    children: [
+      {
+        path: '/user/login',
+        name: '用户登录',
+        component: UserLoginView
+      },
+      {
+        path: '/user/register',
+        name: '用户注册',
+        component: UserRegisterView
+      }
+    ],meta:{
+      hide:true
+    }
+  },
   {
     path: '/',
     name: '主页',
     component: HomeViews,
-    meta:{
-      hide:false
+    meta: {
+      hide: false
     }
   },
   {
     path: '/noAuth',
     name: '无权限',
     component: noAuth,
-    meta:{
-      hide:true
+    meta: {
+      hide: true
     }
   },
   {
-    path:'/home',
+    path: '/home',
     name: '个人中心',
     component: PersionView
   },
   {
-    path:'/admin',
+    path: '/admin',
     name: '权限管理',
     component: AdminView,
-    meta:{
-      access:accessEnum.ADMIN
+    meta: {
+      access: accessEnum.ADMIN
     }
-  },
+  }
 ]
