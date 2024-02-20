@@ -102,8 +102,8 @@ import { onMounted, ref } from 'vue'
 import MdEditor from '@/components/MdEditor.vue'
 import { QuestionControllerService } from '../../../generated'
 import message from '@arco-design/web-vue/es/message'
-import { useRoute } from 'vue-router'
-
+import { useRoute, Router, useRouter } from 'vue-router'
+const router=useRouter()
 const route = useRoute()
 // 如果页面地址包含 update，视为更新页面
 const updatePage = route.path.includes('update')
@@ -182,6 +182,7 @@ const doSubmit = async () => {
     )
     if (res.code === 0) {
       message.success('更新成功')
+      router.push('/mangement/question')
     } else {
       message.error('更新失败，' + res.message)
     }
@@ -224,10 +225,4 @@ const onAnswerChange = (value: string) => {
 </script>
 
 <style scoped>
-#addQuestionView {
-  border-radius: 10px;
-}
-.MdEditor{
-  border-radius: 10px;
-}
 </style>
