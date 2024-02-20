@@ -45,7 +45,7 @@ const canVisible = computed(() => {
       </a-menu-item>
       <a-menu-item v-for="item in canVisible" :key="item.path">{{ item.name }}</a-menu-item>
     </a-menu>
-    <div class="personName">{{ loginUser?.userName ?? '未登陆' }}</div>
+    <div class="personName">{{ store.state.user?.loginUser?.userName ?? "未登录" }}</div>
   </div>
 </template>
 <style scoped>

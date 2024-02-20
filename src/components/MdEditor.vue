@@ -1,5 +1,5 @@
 <template>
-  <Editor :value="value" :plugins="plugins" @change="handleChange" />
+  <Editor :value="value" :plugins="plugins" @change="handleChange" :mode="mode"/>
 </template>
 <script setup lang="ts">
 import gfm from '@bytemd/plugin-gfm'
@@ -17,10 +17,12 @@ const plugins = [
  */
 interface Props {
   value: string,
+  mode:string,
   handleChange: (v: string) => void
 }
 const props = withDefaults(defineProps<Props>(), {
   value: () => "",
+  mode:()=>"split",
   handleChange: (v:string) => {
     console.log(v)
   }
