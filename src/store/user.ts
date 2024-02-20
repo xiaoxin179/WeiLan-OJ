@@ -1,6 +1,5 @@
 // initial state
 import type { StoreOptions } from 'vuex'
-import accessEnum from '@/access/accessEnum'
 import { UserControllerService } from '../../generated'
 import AccessEnum from '@/access/accessEnum'
 
@@ -20,9 +19,7 @@ export default {
         commit('updateUser', res.data)
       }else{
         commit("updateUser",{...state.loginUser, userRole: AccessEnum.NOT_LOGIN})
-
       }
-
     }
   },
   // mutations就是定义对变量增删改查的代码

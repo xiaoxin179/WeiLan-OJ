@@ -44,7 +44,5 @@ const route = useRoute()
     <BasicLayout />
   </template>
 </template>
-
 <style scoped>
-
 </style>
