@@ -192,6 +192,7 @@ const doSubmit = async () => {
     )
     if (res.code === 0) {
       message.success('创建成功')
+      router.push('/mangement/question')
     } else {
       message.error('创建失败，' + res.message)
     }

@@ -10,6 +10,7 @@ import UserRegisterView from '@/views/user/UserRegisterView.vue'
 import AddQuestionView from '@/views/question/AddQuestionView.vue'
 import MangementQuestionView from '@/views/question/MangementQuestionView.vue'
 import AccessEnum from '@/access/accessEnum'
+import QuestionsView from '@/views/question/QuestionsView.vue'
 
 export const routes: Array<RouteRecordRaw> = [
   {
@@ -40,6 +41,15 @@ export const routes: Array<RouteRecordRaw> = [
     }
   },
   {
+    path: "/questions",
+    name: "题库",
+    component: QuestionsView,
+    meta: {
+      access: AccessEnum.USER,
+      hide: false,
+    },
+  },
+  {
     path:'/add/question',
     name:"添加题目",
     component:AddQuestionView,
@@ -62,7 +72,7 @@ export const routes: Array<RouteRecordRaw> = [
     meta: {
       access: AccessEnum.USER,
       hide: true,
-    },
+    }
   },
   {
     path: '/noAuth',
