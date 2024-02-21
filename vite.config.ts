@@ -1,5 +1,5 @@
 import { fileURLToPath, URL } from 'node:url'
-import monacoEditorPlugin from 'vite-plugin-monaco-editor'
+import monacoEditorPlugin  from 'vite-plugin-monaco-editor'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
@@ -7,7 +7,9 @@ import vue from '@vitejs/plugin-vue'
 export default defineConfig({
   plugins: [
     vue(),
-    monacoEditorPlugin({})
+    monacoEditorPlugin({
+      languageWorkers: ['editorWorkerService', 'typescript', 'json', 'html']
+    })
   ],
   resolve: {
     alias: {
