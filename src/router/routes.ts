@@ -11,6 +11,7 @@ import AddQuestionView from '@/views/question/AddQuestionView.vue'
 import MangementQuestionView from '@/views/question/MangementQuestionView.vue'
 import AccessEnum from '@/access/accessEnum'
 import QuestionsView from '@/views/question/QuestionsView.vue'
+import ViewQuestionView from '@/views/question/ViewQuestionView.vue'
 
 export const routes: Array<RouteRecordRaw> = [
   {
@@ -69,6 +70,16 @@ export const routes: Array<RouteRecordRaw> = [
     path: "/update/question",
     name: "更新题目",
     component: AddQuestionView,
+    meta: {
+      access: AccessEnum.USER,
+      hide: true,
+    }
+  },
+  {
+    path: "/view/question/:id",
+    name: "题目详情页",
+    component: ViewQuestionView,
+    props:true,
     meta: {
       access: AccessEnum.USER,
       hide: true,
